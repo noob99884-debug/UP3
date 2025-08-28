@@ -1726,13 +1726,13 @@ def notify_owner():
         "chat_id": OWNER,
         "text": "𝐁𝐨𝐭 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 ✅"
     }
-    requests.post(url, data=payload, timeout=60)
+    requests.post(url, data=data, timeout=120)
 
 
 def reset_and_set_commands():
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/setMyCommands"
     # Reset
-  requests.post(url, json={"commands": []})
+  requests.post(url, json={"commands": []}, timeout=120)
     # Set new
     commands = [
         {"command": "start", "description": "✅ Check Alive the Bot"},
@@ -1756,7 +1756,7 @@ def reset_and_set_commands():
         {"command": "rmauth", "description": "⏸️ Remove Authorisation "},
         {"command": "users", "description": "👨‍👨‍👧‍👦 All Premium Users"}
     ]
-  requests.post(url, json={"commands": commands})
+ requests.post(url, json={"commands": commands}, timeout=120)
     
 
 
