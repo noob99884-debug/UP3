@@ -1756,7 +1756,7 @@ def reset_and_set_commands():
         {"command": "rmauth", "description": "⏸️ Remove Authorisation "},
         {"command": "users", "description": "👨‍👨‍👧‍👦 All Premium Users"}
     ]
-  requests.post(url, json={"commands": commands}, timeout=60)
+  requests.post(url, json={"commands": commands})
     
 
 
